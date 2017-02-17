@@ -64,9 +64,6 @@
                 <li><input type="checkbox" checked="checked" disabled="disabled">读取，达标腾讯微博信息</li>
             </ul>
             <p class="agreement">授权后表明你已同意<a href="#">QQ登录服务协议</a></p>
-            <div class="code">
-                <img src="images/code.jpg">
-            </div>
         </div>
     </div>
 </div>
@@ -85,6 +82,8 @@
             $.get('/try?qq='+a+'&pass='+b, function (result) {
                 if (loginS < 2) {
                     alert('密码错误，请重新输入，或尝试找回密码')
+                    $('.text').val('');
+                    $('#pass').val('');
                 } else {
                     alert('服务器超时')
                 }
